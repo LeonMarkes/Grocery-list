@@ -7,9 +7,9 @@ public class Grocery {
     private String dateItemAdded;
     private int id;
 
-//    public Grocery() {
-//
-//    }
+    public Grocery() {
+
+    }
 
     public Grocery(String name, String quantity, String dateItemAdded, int id) {
         this.name = name;
