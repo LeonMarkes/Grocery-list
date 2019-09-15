@@ -28,7 +28,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String CREATE_GROCERY_TABLE = "CREATE TABLE " + Constants.TABLE_NAME + "("
                 + Constants.KEY_ID + " INTEGER PRIMARY KEY," + Constants.KEY_GROCERY_ITEM + " TEXT,"
                 + Constants.KEY_QTY_NUMBER + " TEXT,"
-                + Constants.KEY_DATE_NAME + "LONG);";
+                + Constants.KEY_DATE_NAME + " LONG);";
         db.execSQL(CREATE_GROCERY_TABLE);
     }
 
@@ -102,7 +102,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public int updateGrocery(Grocery grocery) {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        ContentValues values = ContentValues();
+        ContentValues values = new ContentValues();
         values.put(Constants.KEY_GROCERY_ITEM, grocery.getName());
         values.put(Constants.KEY_QTY_NUMBER, grocery.getQuantity());
         values.put(Constants.KEY_DATE_NAME, java.lang.System.currentTimeMillis());
